@@ -165,7 +165,6 @@ nav {
 
 .project1{
     display: flex;
-    margin-left: 56%;
 }
 
 .tulisankiri {
@@ -173,10 +172,6 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    position: absolute;
-    gap: 30px;
-    padding-top: 5%;
-    transform: translateX(-94.8%);
 }
 
 .paragraf {
@@ -201,7 +196,6 @@ nav {
 .project2 {
     display: flex;
     margin-bottom: 3vh;
-    margin-right: 55%;
 }
 
 .tulisankanan {
@@ -209,10 +203,6 @@ nav {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-evenly;
-    position: absolute;
-    gap: 30px;
-    padding-top: 5%;
-    padding-left: 25%;
 }
 
 .paragraf2 {
@@ -321,4 +311,3 @@ footer {
     
 
 }
-
