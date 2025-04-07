@@ -238,6 +238,11 @@ footer {
     opacity: 70%;
 }
 
+img {
+    width: 100%;
+    height :auto;
+}
+
 @media (max-width: 800px)  {
     .body {
         display: flex;
@@ -280,6 +285,11 @@ footer {
 
     #informasi {
         margin-left: 13%;
+    }
+
+    img {
+        width: 50%;
+        height: auto;
     }
 }
 
