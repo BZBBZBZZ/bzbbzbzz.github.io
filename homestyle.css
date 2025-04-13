@@ -299,8 +299,8 @@ footer {
 
     .gradient-button {
         display: flex;
-        width: 180px;
-        height: 73px;
+        width: 259px;
+        height: 93px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -328,6 +328,13 @@ footer {
         box-shadow: 40px 0 100px #008cff71, 
                 -40px 0 100px #e100ff4d;
         
+    }
+
+    .button {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 10%;
     }
 
     .judul h1{
