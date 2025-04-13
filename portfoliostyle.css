@@ -221,7 +221,7 @@ footer {
     opacity: 70%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 801px) {
     nav {
         flex-direction: column;
         gap: 20px;
