@@ -272,7 +272,7 @@ img {
     }
 
     .outlinevertikal {
-        margin-right: 20%;
+        margin-left: 20%;
     }
 
     .kiri {
@@ -290,6 +290,10 @@ img {
     img {
         width: 50%;
         height: auto;
+    }
+
+    #informatics {
+        margin-left: 13%;
     }
 }
 
