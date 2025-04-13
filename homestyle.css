@@ -333,7 +333,7 @@ footer {
     .button {
         display: flex;
         flex-direction: column;
-        gap: 39px;
+        gap: 40px;
         margin-top: 10%;
     }
 
@@ -355,6 +355,6 @@ footer {
     }
 
     #informatics {
-        margin-left: 10%;
+        margin-left: 13%;
     }
 }
