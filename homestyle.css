@@ -333,7 +333,7 @@ footer {
     .button {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 39px;
         margin-top: 10%;
     }
 
