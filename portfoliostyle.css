@@ -4,49 +4,14 @@
     box-sizing: border-box;
 }
 
-h3 {
-    color: #CCD6F6;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-p{
-    color: #CCD6F6;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-pre {
-    color: #CCD6F6;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-a {
-    color: #CCD6F6;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-}
 body {
     background-image: url(public/pngtree-purple-space-background-with-planet-43661511.png);
     background-size: cover;
     background-color: black;
+    color: #CCD6F6;
+    font-family: Roboto;
 }
+
 
 nav {
     display: flex;
@@ -54,13 +19,14 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     margin-top: 2vh;
-    margin-right: 5vw;
+    margin-right: 4.2vw;
 }
 
 #navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    list-style: none;
 }
 
 #navbar li {
@@ -76,7 +42,7 @@ nav {
     line-height: normal;
 }
 
-#homepage {
+#homepage, #hobby, #portfolio {
     color: #CCD6F6;
     font-family: Roboto;
     font-size: 24px;
@@ -85,34 +51,8 @@ nav {
     line-height: normal;
     text-decoration: none;
 }
-#homepage:hover{
-        color: white;
-    }
 
-
-#hobby{
-    color: #CCD6F6;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-}
-#hobby:hover{
-    color: white;
-}
-
-#portfolio {
-    color: #CCD6F6;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-}
-#portfolio:hover{
+#homepage:hover, #hobby:hover, #portfolio:hover {
     color: white;
 }
 
@@ -122,23 +62,15 @@ nav {
     align-items: center;
 }
 
-#ig {
+#ig, #wa {
     width: 35px;
     height: 35px;
     flex-shrink: 0;
     aspect-ratio: 1/1;
-}
-#ig:hover{
-    opacity: 70%;
+    transition: opacity 0.3s;
 }
 
-#wa {
-    width: 35px;
-    height: 35px;
-    flex-shrink: 0;
-    aspect-ratio: 1/1;
-}
-#wa:hover{
+#ig:hover, #wa:hover {
     opacity: 70%;
 }
 
@@ -158,304 +90,174 @@ nav {
 }
 
 .body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-.project1{
+.project {
     display: flex;
+    margin-bottom: 60px;
 }
 
-.tulisankiri {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+.project-text {
+    flex: 1;
+    padding-right: 40px;
 }
 
-.paragraf {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.project-text h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #CCD6F6;
+    text-align: left;
+}
+
+.project-text h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #CCD6F6;
+    font-weight: 400;
+}
+
+.project-desc {
     background-image: url(public/rectangle-1.png);
     background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.imagecontainer{
-    position: relative;
-    display: inline-block;
+.project-desc p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
-.overlayimage {
-    position: absolute;
-    right: 0%;
-    top: 8%;
+.project-desc a {
+    color: #CCD6F6;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-.overlayimage3 {
-    position: absolute;
-    right: 0%;
-    top: 11%;
-    width: 92%;
-    height: 88%;
-}
-
-.project2 {
-    display: flex;
-    margin-bottom: 3vh;
-}
-
-.tulisankanan {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-evenly;
-}
-
-.paragraf2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background-image: url(public/rectangle-1.png);
-    background-size: cover;
-}
-
-.imagecontainer2{
-    position: relative;
-    display: inline-block;
-}
-
-.overlayimage2 {
-    position: absolute;
-    left: 0%;
-    top: 8%;
-}
-
-
-footer {
-    display: flex;
-    justify-content: space-between;
+.project-image {
+    flex: 1;
+    text-align: center;
     width: 100%;
 }
 
-.kiri {
-    display: flex;
-    margin-top: 2vh;
-    margin-left: 7vw;
+.project-image img {
+    max-width: 100%;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-
-#uc {
-    margin-left: 8%;
-    margin-top: 1%;
-    width: 100px;
-    height: 100px;
-}
-
-.outlinevertikal {
-    outline: 1px white solid;
-    margin-left: 1vw;
-}
-
-#informatics{
-    color: #CCD6F6;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    align-items: center;
-    display: flex;
-    margin-left: 1vw;
-}
-
-#phone {
-    color: #CCD6F6;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#mail{
-    color: #CCD6F6;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#number {
-    text-align: left;
-    padding-left: 3%;
-}
-
-#email{
-    padding-left: 3%;
-}
-
-#informasi{
-    margin-top: 1vh;
-    margin-right: 8vw;
-}
-
-#gambarpone:hover {
-    opacity: 70%;
-}
-
-#gambarmail:hover {
-    opacity: 70%;
-}
 
 .hr-line {
     width: 84%;
     height: 2px;
     background-color: white;
     margin-top: 5%;
+    margin-left: 8%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8%;
+    margin-bottom: 30px;
+}
+
+.kiri {
+    display: flex;
+    margin-top: 2vh;
+    align-items: center;
+}
+
+#uc {
+    width: 100px;
+    height: 100px;
+}
+
+.outlinevertikal {
+    height: 110px;
+    width: 2px;
+    background-color: white;
+    margin: 0 20px;
+}
+
+#informatics {
+    color: #CCD6F6;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#informasi {
+    margin-top: 1vh;
+}
+
+#phone, #mail {
+    color: #CCD6F6;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#number, #email {
+    padding-left: 15px;
+}
+
+#gambarpone, #gambarmail {
+    transition: opacity 0.3s;
+}
+
+#gambarpone:hover, #gambarmail:hover {
+    opacity: 70%;
 }
 
 @media (max-width: 800px) {
     nav {
-        display: flex;
         flex-direction: column;
         gap: 20px;
-        justify-content: center;
+        margin-right: 5%;
+    }
+
+    .project {
+        flex-direction: column;
+    }
+    
+    .project-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    .project-image {
+        width: 100%;
+    }
+    
+    .project-text h3,
+    .project-text h4,
+    .project-desc p {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
         align-items: center;
+    }
+
+    .kiri {
+        gap: 80px;
     }
 
     .logo {
         gap: 10px;
     }
-
-    footer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .outlinevertikal {
-        margin-left: 20%;
-    }
-
-    .kiri {
-        margin-right: 13%;
-    }
-
-    #email {
-        text-align: left;
-    }
-
-    #informasi {
-        margin-left: 13%;
-    }
-
-    #informatics {
-        margin-left: 15%;
-    }
-
-    .project1 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-
-    .project2 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .tulisankiri {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 10%;
-    }
-
-    .tulisankanan {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-top: 10%;
-    }
-
-    .paragraf {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-    }
-
-    .paragraf pre {
-        font-size: 15px;
-        white-space: normal;
-    }
-
-    .paragraf p a {
-        font-size: 15px;
-    }
-
-    .paragraf2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        margin-bottom: 10%;
-    }
-
-    .paragraf2 p {
-        font-size: 15px;
-        white-space: normal;
-    }
-
-    .paragraf2 p a {
-        font-size: 15px;
-    }
-
-    .overlayimage {
-        position: absolute;
-        height: auto;
-        width: 100%;
-    }
-
-    .overlayimage3 {
-        position: absolute;
-        height: auto;
-        width: 100%;
-        top: 12%;
-    }
-
-    .imagecontainer {
-        display: flex;
-    }
-
-    .backgroundimage {
-        width: 100%;
-    }
-
-    .backgroundimage2 {
-        width: 100%;
-    }
-
-    .overlayimage2 {
-        position: absolute;
-        width: 100%;
-    }
-
-    .imagecontainer2 {
-        display: flex;
-        margin-top: 20%;
-    }
-
 }
