@@ -4,62 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="homestyle.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .gradient-button {
+                @apply flex w-[259px] h-[93px] flex-col justify-center items-center gap-2 shrink-0 aspect-[244/93] rounded-full border-none bg-black text-[#CCD6F6] mx-auto relative;
+            }
+            .gradient-button::after {
+                @apply content-[''] absolute h-[112%] w-[107%] rounded-[1000px] bg-gradient-to-br from-[#F843E9] to-[#0090FF] -z-10;
+            }
+            .gradient-button:hover {
+                @apply z-0 shadow-[40px_0_100px_rgba(0,140,255,0.44),-40px_0_100px_rgba(225,0,255,0.3)];
+            }
+            body {
+                background-image: url(public/pngtree-purple-space-background-with-planet-43661511.png);
+
+                @apply bg-cover bg-black;
+            }
+        }
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.411);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+        #navbarhidden {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        #hamburger {
+            filter: brightness(0) saturate(100%) invert(85%) sepia(10%) saturate(300%) hue-rotate(180deg);
+        }
+        #close {
+            filter: brightness(0) saturate(100%) invert(85%) sepia(10%) saturate(300%) hue-rotate(180deg);
+        }
+        .menu-button {
+            display: none;
+        }
+        @media (max-width: 800px) {
+            .hideonmobile {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <p id="mypersonalweb"> My Personal Web</p>
-        <ul id="navbar">
-            <li><a href="https://bzbbzbzz.github.io/" id="homepage">Homepage</a></li>
-            <li><a href="hobby.html" id="hobby">Hobby</a></li>
-            <li><a href="portfolio.html" id="portfolio">Portfolio</a></li>
+    <nav class="flex mx-auto items-center md:justify-evenly justify-center mt-[2vh] md:mr-[5vw] md:flex-row gap-5">
+        <p id="mypersonalweb" class="text-[#CCD6F6] font-roboto text-2xl font-normal">My Personal Web</p>
+        <ul id="navbar" class="hideonmobile flex justify-around items-center">
+            <li class="mx-[30px]"><a href="index.html" id="homepage" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Homepage</a></li>
+            <li class="mx-[30px]"><a href="hobby.html" id="hobby" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Hobby</a></li>
+            <li class="mx-[30px]"><a href="portfolio.html" id="portfolio" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Portfolio</a></li>
         </ul>
-        <div class="logo">        
-            <a href="https://www.instagram.com/nicho_lkurniawan/"><img id="ig" src="public/instagram.svg" alt="logo ig"></a>
-            <a href="https://wa.me/081326899898"><img id="wa" src="public/whatsapp.svg" alt="logo wa"></a>
+        <div class="logo flex gap-[3vw] items-center md:gap-[1vw] gap-2">        
+            <a href="https://www.instagram.com/nicho_lkurniawan/"><img id="ig" class="hideonmobile w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/instagram.svg" alt="logo ig"></a>
+            <a href="https://wa.me/081326899898"><img id="wa" class="hideonmobile w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/whatsapp.svg" alt="logo wa"></a>
+            <img onclick=showSidebar() id="hamburger" class="menu-button w-[50px] h-[50px] shrink-0 aspect-square hover:opacity-70" src="public/hamburger.svg" alt="logo hamburger">
         </div>
     </nav>
-    <div class="body">
-    <div class="judul">
-        <h1>Hi! My Name is Nicholas Leroy <br> Kurniawan</h1>
-    </div>
-    <div class="subjudul">
-        <h3>I'm a student at Ciputra University, currently in my 2nd semester <br> majoring in Informatics. I have a passion for technology, gaming, and <br> exploring new innovations in the digital world</h3>
-    </div>
-    <div class="button">
-        <button onclick="location.href='hobby.html'" class="gradient-button">Want to Know My Hobby?</button>
-        <button onclick="location.href='portfolio.html'" class="gradient-button">or My Portfolio?</button>
-    </div>
-    </div>
-    <div class="outline">
-    </div>
-    <footer>
-        <div class="kiri">
-        <img id="uc" src="public/image-2.png" alt="uc">
-        <div class="outlinevertikal">
+    <nav class="sidebar">
+        <img onclick=hideSidebar() id="close" class="mx-[10px] w-[50px] h-[50px] shrink-0 aspect-square hover:opacity-70" src="public/close.svg" alt="logo hamburger">
+        <ul id="navbarhidden" class="mt-4 mb-4">
+            <li class="mx-[20px]"><a href="index.html" id="homepage" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Homepage</a></li>
+            <li class="mx-[20px]"><a href="hobby.html" id="hobby" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Hobby</a></li>
+            <li class="mx-[20px]"><a href="portfolio.html" id="portfolio" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Portfolio</a></li>
+        </ul>
+        <div class="logo flex gap-[3vw] items-center md:gap-[1vw] gap-2 mx-[20px]">        
+            <a href="https://www.instagram.com/nicho_lkurniawan/"><img id="ig" class="w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/instagram.svg" alt="logo ig"></a>
+            <a href="https://wa.me/081326899898"><img id="wa" class="w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/whatsapp.svg" alt="logo wa"></a>
         </div>
-        <p id="informatics">
-            INFORMATICS
-        </p>
+    </nav>
+
+    <div class="body flex flex-col">
+        <div class="judul">
+            <h1 class="w-auto h-[175px] text-center text-shadow font-roboto text-[64px] font-normal mt-[10vh] bg-gradient-to-r from-[#F843E9] to-[#0090FF] bg-clip-text text-transparent">Hi! My Name is Nicholas Leroy <br> Kurniawan</h1>
         </div>
-        <table id="informasi">
+        <div class="subjudul">
+            <h3 class="text-[#CCD6F6] text-center font-roboto text-[35px] font-normal mt-[5vw]">I'm a student at Ciputra University, currently in my 2nd semester <br> majoring in Informatics. I have a passion for technology, gaming, and <br> exploring new innovations in the digital world</h3>
+        </div>
+        <div class="button mt-[5%] flex justify-center md:flex-row flex-col gap-10 md:gap-0 md:mt-[5%] mt-[10%]">
+            <button onclick="location.href='hobby.html'" class="gradient-button">Want to Know My Hobby?</button>
+            <button onclick="location.href='portfolio.html'" class="gradient-button">or My Portfolio?</button>
+        </div>
+    </div>
+
+    <div class="outline outline-1 outline-white mx-[3%] mt-[9.5vh]"></div>
+
+    <footer class="flex flex-col md:flex-row justify-between items-center p-4 md:p-0">
+        <div class="kiri mr-40 flex items-center mt-4 md:mt-5 ml-4 md:ml-12 mb-4 md:mb-0">
+            <img id="uc" src="public/image-2.png" alt="uc" class="w-16 h-16 md:w-24 md:h-24">
+            <div class="outlinevertikal border-l border-white ml-3 h-10 md:h-16">
+            </div>
+            <p id="informatics" class="text-lg md:text-xl text-slate-200 text-center font-roboto font-normal leading-normal items-center flex ml-3">
+                INFORMATICS
+            </p>
+        </div>
+        <table id="informasi" class="mt-2 mr-4 md:mr-20">
             <tr id="phone">
                 <td>
-                    <a href="https://wa.me/081326899898""><img id="gambarpone" src="public/phone.svg" alt="phone"></a>
+                    <a href="https://wa.me/081326899898" class="hover:opacity-70"><img id="gambarpone" src="public/phone.svg" alt="phone" class="w-5 h-5 md:w-6 md:h-6"></a>
                 </td>
-                <td id="number">
+                <td id="number" class="text-left pl-3 text-lg md:text-xl text-slate-200 font-roboto font-normal leading-normal">
                     081326899898
                 </td>
             </tr>
             <tr id="mail">
                 <td>
-                    <a href="mailto:nkurniawan05@student.ciputra.ac.id"><img id="gambarmail" src="public/mail.svg" alt="mail"></a>
+                    <a href="mailto:nkurniawan05@student.ciputra.ac.id" class="hover:opacity-70"><img id="gambarmail" src="public/mail.svg" alt="mail" class="w-5 h-5 md:w-6 md:h-6"></a>
                 </td>
-                <td id="email">
+                <td id="email" class="pl-3 text-lg md:text-xl text-slate-200 font-roboto font-normal leading-normal">
                     nkurniawan05@student.ciputra.ac.id
                 </td>
             </tr>
         </table>
     </footer>
+
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
 </body>
 </html>
