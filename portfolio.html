@@ -4,88 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
-    <link rel="stylesheet" href="portfoliostyle.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('public/pngtree-purple-space-background-with-planet-43661511.png');
+            background-size: cover;
+            background-color: black;
+            color: #CCD6F6;
+        }
+        .text-gradient {
+            background: linear-gradient(100deg, #F843E9 15.77%, #0090FF 80.95%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .project-desc-bg {
+            background-image: url('public/rectangle-1.png');
+            background-size: cover;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.411);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+        #navbarhidden {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        #hamburger {
+            filter: brightness(0) saturate(100%) invert(85%) sepia(10%) saturate(300%) hue-rotate(180deg);
+        }
+        #close {
+            filter: brightness(0) saturate(100%) invert(85%) sepia(10%) saturate(300%) hue-rotate(180deg);
+        }
+        .menu-button {
+            display: none;
+        }
+        @media (max-width: 800px) {
+            .hideonmobile {
+                display: none !important;
+            }
+            .menu-button {
+                display: block !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <p id="mypersonalweb">My Personal Web</p>
-        <ul id="navbar">
-            <li><a href="https://bzbbzbzz.github.io/" id="homepage">Homepage</a></li>
-            <li><a href="hobby.html" id="hobby">Hobby</a></li>
-            <li><a href="portfolio.html" id="portfolio">Portfolio</a></li>
+    <nav class="flex mx-auto items-center md:justify-evenly justify-center mt-[2vh] md:mr-[4.3vw] md:flex-row gap-5">
+        <p id="mypersonalweb" class="text-[#CCD6F6] font-roboto text-2xl font-normal">My Personal Web</p>
+        <ul id="navbar" class="hideonmobile flex justify-around items-center">
+            <li class="mx-[30px]"><a href="index.html" id="homepage" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Homepage</a></li>
+            <li class="mx-[30px]"><a href="hobby.html" id="hobby" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Hobby</a></li>
+            <li class="mx-[30px]"><a href="portfolio.html" id="portfolio" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Portfolio</a></li>
         </ul>
-        <div class="logo">        
-            <a href="https://www.instagram.com/nicho_lkurniawan/"><img id="ig" src="public/instagram.svg" alt="logo ig"></a>
-            <a href="https://wa.me/081326899898"><img id="wa" src="public/whatsapp.svg" alt="logo wa"></a>
+        <div class="logo flex gap-[3vw] items-center md:gap-[1vw] gap-2">        
+            <a href="https://www.instagram.com/nicho_lkurniawan/"><img id="ig" class="hideonmobile w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/instagram.svg" alt="logo ig"></a>
+            <a href="https://wa.me/081326899898"><img id="wa" class="hideonmobile w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/whatsapp.svg" alt="logo wa"></a>
+            <img onclick=showSidebar() id="hamburger" class="menu-button w-[50px] h-[50px] shrink-0 aspect-square hover:opacity-70" src="public/hamburger.svg" alt="logo hamburger">
         </div>
     </nav>
-    <div class="judul">
-        <h1>My Portfolio</h1>
+    <nav class="sidebar">
+        <img onclick=hideSidebar() id="close" class="mx-[10px] w-[50px] h-[50px] shrink-0 aspect-square hover:opacity-70" src="public/close.svg" alt="logo hamburger">
+        <ul id="navbarhidden" class="mt-4 mb-4">
+            <li class="mx-[20px]"><a href="index.html" id="homepage" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Homepage</a></li>
+            <li class="mx-[20px]"><a href="hobby.html" id="hobby" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Hobby</a></li>
+            <li class="mx-[20px]"><a href="portfolio.html" id="portfolio" class="text-[#CCD6F6] font-roboto text-2xl font-normal no-underline hover:text-white">Portfolio</a></li>
+        </ul>
+        <div class="logo flex gap-[3vw] items-center md:gap-[1vw] gap-2 mx-[20px]">        
+            <a href="https://www.instagram.com/nicho_lkurniawan/"><img id="ig" class="w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/instagram.svg" alt="logo ig"></a>
+            <a href="https://wa.me/081326899898"><img id="wa" class="w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/whatsapp.svg" alt="logo wa"></a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-gradient text-3xl md:text-4xl text-center mb-12">My Portfolio</h1>
+        
+        <div class="space-y-16 max-w-6xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl text-[#CCD6F6] mb-4">My First Project</h3>
+                    <h4 class="text-2xl text-[#CCD6F6] font-normal mb-6">My own personal website using wordpress</h4>
+                    <div class="project-desc-bg rounded-lg p-6">
+                        <p class="mb-4">This is my first website project using wordpress and it's about my personal hobby</p>
+                        <p><a href="https://nicho923.wordpress.com/" class="font-bold hover:underline">nicho923.wordpress.com</a></p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="public/personalwordpress.png" alt="Personal WordPress Project" class="rounded-lg shadow-lg w-full max-w-lg mx-auto text-left">
+                </div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl text-[#CCD6F6] mb-4">My Second Project</h3>
+                    <h4 class="text-2xl text-[#CCD6F6] font-normal mb-6">Leukotheam Student Council Website using Wordpress</h4>
+                    <div class="project-desc-bg rounded-lg p-6">
+                        <p class="mb-4">This is my second website project using wordpress and it's about Ciputra University Student Council</p>
+                        <p><a href="https://www.ciputra.ac.id/sc/" class="font-bold hover:underline">www.ciputra.ac.id/sc/</a></p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="public/studentcouncil.png" alt="Student Council Project" class="rounded-lg shadow-lg w-full max-w-lg mx-auto">
+                </div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl text-[#CCD6F6] mb-4">My Third Project</h3>
+                    <h4 class="text-2xl text-[#CCD6F6] font-normal mb-6">My 2nd AFL for Webprog using HTML and CSS</h4>
+                    <div class="project-desc-bg rounded-lg p-6">
+                        <p class="mb-4">This is my 2nd AFL for Webprog using HTML and CSS and it's about CSS styling</p>
+                        <p><a href="https://bzbbzbzz.github.io/afl2-wepprog/" class="font-bold hover:underline">bzbbzbzz.github.io/afl2-wepprog/</a></p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="public/afl2.png" alt="AFL2 Project" class="rounded-lg shadow-lg w-full max-w-lg mx-auto">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="body">
-        <div class="project">
-            <div class="project-text">
-                <h3>My First Project</h3>
-                <h4>My own personal website using wordpress</h4>
-                <div class="project-desc">
-                    <p>This is my first website project using wordpress and it's about my personal hobby</p>
-                    <p><a href="https://nicho923.wordpress.com/">nicho923.wordpress.com</a></p>
-                </div>
+
+    <div class="outline outline-1 outline-white mx-[3%] mt-[9.5vh]"></div>
+
+    <footer class="flex flex-col md:flex-row justify-between items-center p-4 md:p-0">
+        <div class="kiri mr-40  flex items-center mt-4 md:mt-5 ml-4 md:ml-12 mb-4 md:mb-0">
+            <img id="uc" src="public/image-2.png" alt="uc" class="w-16 h-16 md:w-24 md:h-24">
+            <div class="outlinevertikal border-l border-white ml-3 h-10 md:h-16">
             </div>
-            <div class="project-image">
-                <img src="public/personalwordpress.png" alt="Personal WordPress Project">
-            </div>
+            <p id="informatics" class="text-lg md:text-xl text-[#CCD6F6] text-center font-roboto font-normal leading-normal items-center flex ml-3">
+                INFORMATICS
+            </p>
         </div>
-        <div class="project">
-            <div class="project-text">
-                <h3>My Second Project</h3>
-                <h4>Leukotheam Student Council Website using Wordpress</h4>
-                <div class="project-desc">
-                    <p>This is my second website project using wordpress and it's about Ciputra University Student Council</p>
-                    <p><a href="https://www.ciputra.ac.id/sc/">www.ciputra.ac.id/sc/</a></p>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="public/studentcouncil.png" alt="Student Council Project">
-            </div>
-        </div>
-        <div class="project">
-            <div class="project-text">
-                <h3>My Third Project</h3>
-                <h4>My 2nd AFL for Webprog using HTML and CSS</h4>
-                <div class="project-desc">
-                    <p>This is my 2nd AFL for Webprog using HTML and CSS and it's about CSS styling</p>
-                    <p><a href="https://bzbbzbzz.github.io/afl2-wepprog/">bzbbzbzz.github.io/afl2-wepprog/</a></p>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="public/afl2.png" alt="AFL2 Project">
-            </div>
-        </div>
-    </div>
-    
-    <div class="hr-line"></div>
-    
-    <footer>
-        <div class="kiri">
-            <img id="uc" src="public/image-2.png" alt="uc">
-            <div class="outlinevertikal"></div>
-            <p id="informatics">INFORMATICS</p>
-        </div>
-        <table id="informasi">
+        <table id="informasi" class="mt-2 mr-4 md:mr-20">
             <tr id="phone">
                 <td>
-                    <a href="https://wa.me/081326899898"><img id="gambarpone" src="public/phone.svg" alt="phone"></a>
+                    <a href="https://wa.me/081326899898" class="hover:opacity-70"><img id="gambarpone" src="public/phone.svg" alt="phone" class="w-5 h-5 md:w-6 md:h-6"></a>
                 </td>
-                <td id="number">081326899898</td>
+                <td id="number" class="text-left pl-3 text-lg md:text-xl text-[#CCD6F6] font-roboto font-normal leading-normal">
+                    081326899898
+                </td>
             </tr>
             <tr id="mail">
                 <td>
-                    <a href="mailto:nkurniawan05@student.ciputra.ac.id"><img id="gambarmail" src="public/mail.svg" alt="mail"></a>
+                    <a href="mailto:nkurniawan05@student.ciputra.ac.id" class="hover:opacity-70"><img id="gambarmail" src="public/mail.svg" alt="mail" class="w-5 h-5 md:w-6 md:h-6"></a>
                 </td>
-                <td id="email">nkurniawan05@student.ciputra.ac.id</td>
+                <td id="email" class="pl-3 text-lg md:text-xl text-[#CCD6F6] font-roboto font-normal leading-normal">
+                    nkurniawan05@student.ciputra.ac.id
+                </td>
             </tr>
         </table>
     </footer>
+
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
 </body>
 </html>
