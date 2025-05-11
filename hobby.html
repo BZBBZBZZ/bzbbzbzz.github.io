@@ -34,6 +34,12 @@
         .menu-button {
             display: none;
         }
+        .text-gradient {
+            background: linear-gradient(100deg, #F843E9 15.77%, #0090FF 80.95%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
         @media (max-width: 800px) {
             .hideonmobile {
                 display: none;
@@ -70,9 +76,9 @@
             <a href="https://wa.me/081326899898"><img id="wa" class="w-[35px] h-[35px] shrink-0 aspect-square hover:opacity-70" src="public/whatsapp.svg" alt="logo wa"></a>
         </div>
     </nav>
-    <div class="judul text-center text-shadow-md font-roboto text-xl md:text-2xl font-normal leading-normal bg-gradient-to-r from-[#F843E9] to-[#0090FF] bg-clip-text -webkit-background-clip: text -webkit-text-fill-color: transparent mt-8 md:mt-12 mb-8 md:mb-12">
-        <h1>My Hobby</h1>
-    </div>
+
+    <h1 class="text-gradient text-3xl md:text-4xl text-center mb-12 mt-12">My Hobby</h1>
+
     <div class="body flex flex-col md:flex-row justify-center gap-8 md:gap-10 mx-4 md:mx-0">
         <div class="kolum flex flex-col justify-evenly h-auto md:h-[595px] w-full md:w-auto">
             <h3 class="text-xl md:text-3xl text-[#CCD6F6] text-center font-roboto font-normal leading-normal">Playing Games</h3>
